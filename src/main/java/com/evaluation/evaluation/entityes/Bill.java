@@ -14,10 +14,10 @@ public class Bill {
     private String number;
 
     @Column(nullable = false)
-    private LocalDate datebill;
+    private LocalDate date;
 
     @Enumerated(EnumType.STRING)
-    private Type_Pay typepay;
+    private Type_Pay typePay;
 
     @Column(nullable = false)
     private Double total;
@@ -37,19 +37,19 @@ public class Bill {
     }
 
     public LocalDate getDate_bill() {
-        return datebill;
+        return date;
     }
 
     public void setDate_bill(LocalDate date_bill) {
-        this.datebill = date_bill;
+        this.date = date_bill;
     }
 
     public Type_Pay getType_pay() {
-        return typepay;
+        return typePay;
     }
 
     public void setType_pay(Type_Pay type_pay) {
-        this.typepay = type_pay;
+        this.typePay = type_pay;
     }
 
     public Double getTotal() {
@@ -70,6 +70,6 @@ public class Bill {
 
     @Override
     public String toString(){
-        return "Bill{"+"id='"+number+'\''+",date_bill='"+datebill+'\''+",type_pay='"+typepay+'\''+",total='"+total+'\''+",customer=\'"+customer+'}';
+        return "Bill{"+"id='"+number+'\''+",date_bill='"+date+'\''+",type_pay='"+typePay+'\''+",total='"+total+'\''+",customer=\'"+customer+'}';
     }
 }

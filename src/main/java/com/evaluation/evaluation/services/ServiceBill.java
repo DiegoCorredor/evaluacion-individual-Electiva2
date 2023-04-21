@@ -23,8 +23,6 @@ public class ServiceBill {
         this.repositorieBill = repositorieBill;
     }
 
-    public static Object findByCustomer(int id) {
-    }
 
     public List<Bill> findAll(){
         return repositorieBill.findAll();
@@ -66,7 +64,7 @@ public class ServiceBill {
         }
     }
 
-    public List<Bill> findByCustomer(int id){
+    public List<Bill> findByCustomer(Integer id){
         Optional<Customer> optional = repositorieCustomer.findById(id);
         if (optional.isPresent()){
             return repositorieBill.findByCustomer(optional.get());

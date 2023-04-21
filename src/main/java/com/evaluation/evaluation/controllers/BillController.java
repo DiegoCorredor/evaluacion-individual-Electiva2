@@ -83,15 +83,15 @@ public class BillController {
     }
 
     @GetMapping("/customer/{id}")
-    public ResponseEntity getBillByCustomer(@PathVariable int id) {
-        return ResponseEntity.status(HttpStatus.OK).body(ServiceBill.findByCustomer(id));
+    public ResponseEntity getBillByCustomer(@PathVariable Integer id){
+        return ResponseEntity.status(HttpStatus.OK).body(serviceBill.findByCustomer(id));
     }
 
     @GetMapping("/pay/{id}")
     public ResponseEntity getBillByPay(@PathVariable String id) {
         return ResponseEntity.status(HttpStatus.OK).body(serviceBill.findByPay(id));
     }
-    @GetMapping("/date/{start}/{end}")
+    @GetMapping("/datebill/{start}/{end}")
     public ResponseEntity getBillByDate(@PathVariable LocalDate start,@PathVariable LocalDate end) {
         return ResponseEntity.status(HttpStatus.OK).body(serviceBill.findByDate(start,end));
     }
